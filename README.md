@@ -1,0 +1,39 @@
+# Diff between current and previous tag
+
+This action returns commit messages between two tags. Usually triggered after you create a new tag.
+
+## Inputs
+
+## `owner`
+
+**Required** Name of the owner or organization name of the repository 
+
+## `repo`
+
+**Required** The repo that contains the tags
+
+## `github-token`
+
+**Required** Github token to access to fetch tags
+
+## Example usage
+
+```
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  get-commit-diff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Get commits 
+        uses: actions/commits-between-tags-action@v0.1
+        with:
+          owner: 'my-org'
+          repo: 'my-repo'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+```

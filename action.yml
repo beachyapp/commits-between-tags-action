@@ -1,0 +1,21 @@
+name: 'Commit messages between two tags'
+description: 'Returns diff between last two commits. Usually called after creating a tag.'
+inputs:
+  owner:
+    description: 'Owner of the repo (or org name)'
+    required: true
+    default: ''
+  repo:
+    description: 'Repo that will be the source of the tag'
+    required: true
+    default: ''
+  github-token:
+    description: 'Github token to allow github API access'
+    required: true
+    default: ''
+outputs:
+  commits:
+    description: 'String of commit messages from the diff'
+runs:
+  using: 'node17'
+  main: 'dist/index.js'
