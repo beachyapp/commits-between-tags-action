@@ -29,10 +29,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Get commits 
         id: diff
-        uses: actions/commits-between-tags-action@v0.1
+        uses: actions/commits-between-tags-action@v0.2
         with:
           owner: 'my-org'
           repo: 'my-repo'
