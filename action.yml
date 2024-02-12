@@ -17,5 +17,5 @@ outputs:
   commits:
     description: 'String of commit messages from the diff'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
